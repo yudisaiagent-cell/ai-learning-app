@@ -1,0 +1,30 @@
+{
+  "name": "Ai learning",
+  "short_name": "Ai learning",
+  "description": "אתר לימוד אישי: שימוש מקצועי במודלי שפה, פרומפטים, סוכנים ואוטומציות.",
+  "start_url": "/ai-learning-app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f6f7f5",
+  "lang": "he",
+  "scope": "/ai-learning-app/",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

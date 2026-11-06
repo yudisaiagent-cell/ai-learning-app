@@ -1,0 +1,1 @@
+var e=`/ai-learning-app/`.replace(/\/$/,``),t=t=>`${e}${t}`;export{t};

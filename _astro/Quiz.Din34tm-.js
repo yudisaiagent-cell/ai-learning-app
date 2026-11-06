@@ -1,0 +1,32 @@
+import{n as e}from"./rolldown-runtime.WkwZ5CU-.js";import{t}from"./react.CmU_e8vp.js";import{l as n,t as r}from"./useStore.8hAnF1ji.js";import{t as i}from"./Ic.CTWJy8ks.js";import{t as a}from"./jsx-runtime.C2aMnSBe.js";var o=e(t(),1),s=a(),c={mcq:`בחירה`,tf:`נכון או לא`,scenario:`תרחיש`},l=.8;function u(e){let t=e.slice();for(let e=t.length-1;e>0;e--){let n=Math.floor(Math.random()*(e+1));[t[e],t[n]]=[t[n],t[e]]}return t}function d({slug:e,questions:t,chapterHref:a}){let d=r()?.quizzes[e],[p,m]=(0,o.useState)(0),h=(0,o.useMemo)(()=>p===0?t:u(t).map(e=>({...e,options:e.type===`tf`?e.options:u(e.options)})),[p]),[g,_]=(0,o.useState)(0),[v,y]=(0,o.useState)({}),b=h[g],x=b?v[b.id]:void 0,S=g>=h.length,C=h.filter(e=>v[e.id]===e.answer).length,w=e=>{x||y(t=>({...t,[b.id]:e}))},T=()=>{if(g+1>=h.length){let t=C/h.length;n(n=>{let r=n.quizzes[e]??{best:0,attempts:0,mastered:!1};n.quizzes[e]={best:Math.max(r.best,t),attempts:r.attempts+1,mastered:r.mastered||t>=l}})}_(e=>e+1),requestAnimationFrame(()=>document.getElementById(`quiz-top`)?.focus())},E=()=>{m(e=>e+1),_(0),y({})};if(S){let e=Math.round(C/h.length*100),t=C/h.length>=l;return(0,s.jsxs)(`section`,{className:`qz`,"aria-live":`polite`,children:[(0,s.jsxs)(`h2`,{id:`quiz-top`,tabIndex:-1,className:`qz__result`,children:[(0,s.jsx)(`span`,{className:`num`,children:C}),`/`,(0,s.jsx)(`span`,{className:`num`,children:h.length}),` · `,(0,s.jsxs)(`span`,{className:`num`,children:[e,`%`]})]}),(0,s.jsx)(`p`,{className:`qz__verdict`,children:t?`הפרק נשלט. כל הכבוד.`:`צריך ${Math.ceil(l*h.length)} תשובות נכונות כדי לשלוט בפרק. נסה שוב: השאלות יופיעו בסדר אחר.`}),(0,s.jsx)(`ol`,{className:`qz__summary`,children:h.map(e=>{let t=v[e.id]===e.answer;return(0,s.jsxs)(`li`,{className:t?`ok`:`bad`,children:[(0,s.jsx)(i,{name:t?`check`:`close`,size:18}),(0,s.jsx)(`span`,{children:e.prompt})]},e.id)})}),(0,s.jsxs)(`div`,{className:`qz__actions`,children:[(0,s.jsxs)(`button`,{type:`button`,className:`btn btn--cloth`,onClick:E,children:[(0,s.jsx)(i,{name:`restart`}),` בוחן חוזר`]}),(0,s.jsx)(`a`,{className:`btn`,href:a,children:`חזרה לפרק`})]}),(0,s.jsx)(`style`,{children:f})]})}return(0,s.jsxs)(`section`,{className:`qz`,children:[(0,s.jsxs)(`div`,{className:`qz__meta`,children:[(0,s.jsxs)(`span`,{id:`quiz-top`,tabIndex:-1,children:[`שאלה `,(0,s.jsx)(`span`,{className:`num`,children:g+1}),` מתוך `,(0,s.jsx)(`span`,{className:`num`,children:h.length})]}),(0,s.jsx)(`span`,{children:c[b.type]}),d&&(0,s.jsxs)(`span`,{children:[`הכי טוב: `,(0,s.jsxs)(`span`,{className:`num`,children:[Math.round(d.best*100),`%`]})]})]}),(0,s.jsx)(`div`,{className:`qz__progress`,"aria-hidden":`true`,children:h.map((e,t)=>(0,s.jsx)(`span`,{className:t<g?v[e.id]===e.answer?`p--ok`:`p--bad`:t===g?`p--here`:``},e.id))}),(0,s.jsx)(`h2`,{className:`qz__q`,children:b.prompt}),(0,s.jsx)(`ul`,{className:`qz__opts`,role:`list`,children:b.options.map(e=>{let t=x?e.id===b.answer?`is-right`:e.id===x?`is-wrong`:`is-other`:``;return(0,s.jsxs)(`li`,{children:[(0,s.jsxs)(`button`,{type:`button`,className:`qz__opt ${t}`,onClick:()=>w(e.id),"aria-disabled":!!x,"aria-pressed":e.id===x,children:[(0,s.jsx)(`span`,{className:`qz__opt-text`,children:e.text}),x&&(e.id===b.answer||e.id===x)&&(0,s.jsx)(i,{name:e.id===b.answer?`check`:`close`,size:20})]}),x&&(e.id===x||e.id===b.answer)&&(0,s.jsx)(`p`,{className:`qz__why`,children:e.explanation})]},e.id)})}),(0,s.jsx)(`div`,{className:`qz__actions`,"aria-live":`polite`,children:x&&(0,s.jsxs)(`button`,{type:`button`,className:`btn btn--cloth`,onClick:T,children:[g+1<h.length?`לשאלה הבאה`:`לתוצאה`,` `,(0,s.jsx)(i,{name:`next`})]})}),(0,s.jsx)(`style`,{children:f})]})}var f=`
+.qz { display: flex; flex-direction: column; gap: 18px; }
+.qz__meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 15px; color: var(--muted); }
+.qz__meta span:first-child { color: var(--ink); font-weight: 500; }
+.qz__meta [tabindex='-1']:focus { outline: none; }
+.qz__progress { display: flex; gap: 4px; }
+.qz__progress span { flex: 1; height: 5px; border-radius: 999px; background: var(--control); }
+.qz__progress .p--ok { background: var(--accent); }
+.qz__progress .p--bad { background: var(--negative); }
+.qz__progress .p--here { background: var(--text); }
+.qz__q { font-size: 22px; line-height: 1.4; }
+.qz__opts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.qz__opt { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; min-height: 54px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1.5px solid transparent; border-radius: var(--radius-inner); background: var(--surface); font: 400 18px/1.45 var(--f-text); transition: border-color 160ms var(--ease-out), background-color 160ms var(--ease-out); }
+.qz__opt:hover:not([aria-disabled='true']) { background: var(--surface-2); } .qz__opt:active:not([aria-disabled='true']) { transform: scale(0.98); }
+.qz__opt:focus-visible { outline: 2px solid var(--cloth); outline-offset: 2px; }
+.qz__opt[aria-disabled='true'] { cursor: default; }
+.qz__opt.is-right { border-color: var(--ok); background: rgb(47 93 58 / 0.07); color: var(--ink); }
+.qz__opt.is-right svg { color: var(--ok); }
+.qz__opt.is-wrong { border-color: var(--bad); color: var(--ink); }
+.qz__opt.is-wrong svg { color: var(--bad); }
+.qz__opt.is-other { color: var(--muted); }
+.qz__why { margin: 8px 4px 4px; font: 400 16.5px/1.75 var(--f-text); color: var(--ink-soft); animation: qz-in 320ms var(--ease-out); }
+@keyframes qz-in { from { opacity: 0; transform: translateY(-4px); } }
+.qz__actions { display: flex; flex-wrap: wrap; gap: 10px; min-height: 46px; }
+.qz__result { font: 600 32px/1.1 var(--font); color: var(--text); }
+.qz__result:focus { outline: none; }
+.qz__verdict { font-size: 19px; }
+.qz__summary { list-style: none; margin: 0; padding: 4px 16px; background: var(--surface); border-radius: var(--radius-inner); }
+.qz__summary li { display: grid; grid-template-columns: auto 1fr; gap: 10px; padding: 12px 0; font-size: 15px; } .qz__summary li + li { border-top: 1px solid var(--border); }
+.qz__summary li.ok svg { color: var(--ok); }
+.qz__summary li.bad svg { color: var(--bad); }
+`;export{d as default};
